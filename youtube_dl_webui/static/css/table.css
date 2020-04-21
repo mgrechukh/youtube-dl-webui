@@ -2,12 +2,10 @@
     width: 100%;
     border-collapse: collapse;
     padding: 0;
-    font-size: 14px;
     border-bottom: 1px solid #ddd;
 }
 
 .com-table tbody tr.current {
-    background-color: #cce8c1;
 }
 
 .com-table tbody tr:not(.current):nth-of-type(2n) {
@@ -22,7 +20,7 @@
 .com-table td {
     line-height: 18px;
     padding: 12px;
-    color: #6b7684;
+    #color: #6b7684;
     word-break: break-all;
 }
 
@@ -45,7 +43,7 @@
 .com-table a {
     display: inline-block;
     padding: 2px 5px;
-    color: #2daaff;
+    #color: #2daaff;
     border-radius: 3px;
 }
 

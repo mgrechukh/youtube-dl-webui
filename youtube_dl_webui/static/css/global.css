@@ -2,11 +2,6 @@
     --border-color: #bfbfbf;
     --header-height: 33px;
     --footer-margin: 5px;
-    --footer-height: 195px;
-    --main-height: calc(100% - (var(--footer-height) + var(--header-height) + var(--footer-margin)));
-    --info-tab-height: 35px;
-    --tabpane-dl-width: 500px;
-    --tabpane-dt-width: 120px;
     --state-finished-color: grey;
     --state-downloading-color: blue;
     --state-paused-color: green;
@@ -15,11 +10,10 @@
 
 html, body {
     height: 100%;
-    font:normal 11px arial,tahoma,verdana,helvetica;
-    font-size: 15px;
-    color: #0d0d0d;
+    color: #000000;
     display: flex;
     flex-flow: column;
+    font-family: sans-serif;
 }
 
 a {
@@ -39,13 +33,12 @@ td {
 }
 
 header {
-    height: 33px;
+	margin-bottom: 10px;
 }
 
 .operBtns button {
     cursor: pointer;
     color:#333;
-    font-size: 13px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
     padding: 3px 10px 3px 10px;
     border: 2px solid;
@@ -67,20 +60,16 @@ header {
 }
 
 .main-body {
-    display: flex;
-    height: var(--main-height);
+    height: 70%;
 }
 
 .main-body .sidebar-wrapper {
-    width: 200px;
-    min-width: 150px;
     border: 2px solid var(--border-color);
     border-radius: 5px;
     background-color: #fff;
 }
 
 .filter-caption {
-    font-size: 12px;
     font-weight: bold;
     background-image: linear-gradient(to top, #80b9ff, #99c7ff);
     border: 0;
@@ -88,7 +77,6 @@ header {
 }
 
 .filter-list {
-    font-size: 14px;
     padding: 6px 0 0 0;
 }
 
@@ -127,9 +115,10 @@ header {
 }
 
 table {
-    width:100%;
     border-collapse: collapse;
     border-style: hidden;
+    min-width: 200px; max-width: none;
+    width: 100%;
 }
 
 table td, table th {
@@ -137,18 +126,15 @@ table td, table th {
 }
 
 table thead th {
-    font-size: 12px;
     font-weight: bold;
     background-image: linear-gradient(to top, #80b9ff, #99c7ff);
     padding: 3px 9px 3px 9px;
 }
 
 table tbody tr {
-    font-size: 11px;
-    font-weight: lighter;
+    #font-weight: lighter;
     /* background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); */
-    background-color: rgba(132, 132, 132, 0.3);
-    height: 23px;
+    /* background-color: rgba(132, 132, 132, 0.3); */
     overflow: hidden;
     cursor: default;
 }
@@ -162,20 +148,22 @@ tr .progress-bar {
 }
 
 tr .progress-bar .string {
+    white-space:nowrap;
+    color: #e0e0e0;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 0;
     right: 0;
-    margin: auto auto;
+    margin: 0px;
 }
 
 tr .progress-bar .bar-container {
-    margin: 3px;
+    margin: 2px;
 }
 
 tr .progress-bar .bar {
-    height: 19px;
+    height: 1.3em;
     width: 70%;
     background: linear-gradient(to top, rgba(96, 115, 159, 0.7), rgba(96, 115, 159, 0.9), rgba(96, 115, 159, 0.7));
 }
@@ -206,7 +194,6 @@ footer div.info-tabs {
 }
 
 ul.task-info {
-    font-size: 13px;
     font-weight: bold;
     list-style: none;
     display: flex;
@@ -237,14 +224,10 @@ ul.task-info li:first-of-type {
 }
 
 .tabpane {
-    font-size: 12px;
+	height: 20%;
 }
 
 .tabpane dl {
-    width: var(--tabpane-dl-width);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     white-space:nowrap;
     padding: 10px;
     margin: 0;
@@ -253,17 +236,15 @@ ul.task-info li:first-of-type {
 .tabpane dl dt {
     font-weight: bold;
     display: inline-block;
-    width: var(--tabpane-dt-width);
     margin-bottom:5px;
 }
 
 .tabpane dl dd {
-    display: inline-block;
+    #display: inline-block;
     overflow: hidden;
     list-style: none;
     margin-left: 0;
     margin-bottom: 5px;
-    width: calc(var(--tabpane-dl-width) - var(--tabpane-dt-width));
 }
 
 .tabpane div.details {
@@ -324,5 +305,4 @@ ul.task-info li:first-of-type {
 
 .tabpane div.log-container th,
 .tabpane div.log-container td {
-    font-size: 12px;
 }

@@ -185,20 +185,18 @@ var videoDownload = (function (Vue, extendAM){
                     that.getTaskList();
                 },
                 speedConv: function(state, value) {
-                    if (state == 'paused' || state == 'invalid')
-                        return '0 B/s';
-                    else if (state == 'finished')
-                        return 'Done';
-                    return this.bitsToHuman(value) + '/s';
+                    if (state == 'downloading')
+	                    return this.bitsToHuman(value) + '/s';
+		    return '';
                 },
                 etaConv: function(state, value) {
                     if (state == 'paused' || state == 'invalid' || state == 'finished')
-                        return 'NaN';
+                        return '';
                     return this.secondsToHuman(value);
                 },
                 progressConv: function(state, value) {
                     if (state == 'finished')
-                        return 'Done';
+                        return '100%';
                     return value;
                 },
                 bitsToHuman: function(value) {
