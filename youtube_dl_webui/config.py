@@ -16,19 +16,8 @@ class conf_base(object):
         self.load(conf_dict)
 
     def load(self, conf_dict):
-        for field in self._valid_fields:
-            key      = field[0]
-            dft_val  = field[1]
-            val_type = field[2]
-            vld_regx = field[3]
-            func     = field[4]
-
-            # More check can be made here
-            if key in conf_dict:
-                self._conf[key] = conf_dict[key] if func is None else func(conf_dict.get(key, dft_val))
-            elif dft_val is not None:
-                self._conf[key] = dft_val if func is None else func(conf_dict.get(key, dft_val))
-
+        for field in conf_dict:
+            self._conf[field] = conf_dict[field]
 
     def get_val(self, key):
         return self._conf[key]
